@@ -1,31 +1,43 @@
-name: Running Code Coverage
-on:
+name: Node CI
+
+on: 
   push:
     branches:
       - main
 
 jobs:
-  build:
-
+  buildAndTest:
     runs-on: windows-latest
 
     strategy:
       matrix:
-        node-version: [15.x]
+        node-version: [8.x, 10.x, 12.x]
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 2
-
-    - name: Set up Node.js ${{ matrix.node-version }}
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Install, build, test
+      run: |
+        npm install
+        npm run build
+        npm test
+      env:
+        CI: true
 
-    - name: Install dependencies
-      run: npm install
-
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
+  checkCodestyle:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: '8.x'
+    - name: Install and check codestyle
+      run: |
+        npm install
+        npm run codestyle
+      env:
+        CI: true
