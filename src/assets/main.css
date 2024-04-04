@@ -1,0 +1,40 @@
+:root {
+  --primary: #000000;
+  --primary-light: #F3F4FF;
+  --white: #fff;
+  --dark: #000000;
+  --grey: #83859C;
+  --grey-darker: #545563;
+  --grey-light: #C7C8D2;
+  --grey-lightest: rgba(119, 255, 35, 0.37);
+  --error: #FF5C60;
+  --breakpoint-mobile: 768px;
+  --breakpoint-desktop: 1110px;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: var(--breakpoint-desktop);
+}
+
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}

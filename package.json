@@ -1,0 +1,31 @@
+{
+  "name": "restaurants-frontend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "test:unit": "vue-cli-service test:unit",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@kyvg/vue3-notification": "^3.0.2",
+    "axios": "^1.6.2",
+    "bulma": "^0.9.4",
+    "pinia": "^2.1.7",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.4.0",
+    "@vue/cli-plugin-unit-jest": "~5.0.0",
+    "@vue/test-utils": "^2.0.0-0",
+    "@vue/vue3-jest": "^27.0.0-alpha.1",
+    "babel-jest": "^27.0.6",
+    "dependency-cruiser": "^15.4.0",
+    "jest": "^27.0.5",
+    "sass": "^1.69.5",
+    "scss": "^0.2.4",
+    "vite": "^4.4.11"
+  }
+}
